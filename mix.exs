@@ -50,14 +50,7 @@ defmodule ExAws.S3.Mixfile do
       {:hackney, ">= 0.0.0", only: [:dev, :test]},
       {:jason, ">= 0.0.0", only: [:dev, :test]},
       {:sweet_xml, ">= 0.0.0", optional: true},
-      ex_aws()
+      {:ex_aws, git: "https://github.com/chrislaskey/ex_aws.git", branch: "main"}
     ]
-  end
-
-  defp ex_aws() do
-    case System.get_env("AWS") do
-      "LOCAL" -> {:ex_aws, path: "../ex_aws"}
-      _ -> {:ex_aws, "~> 2.0"}
-    end
   end
 end
