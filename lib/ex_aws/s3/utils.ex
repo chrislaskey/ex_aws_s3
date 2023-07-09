@@ -47,7 +47,7 @@ defmodule ExAws.S3.Utils do
     regular_headers
     |> Map.merge(amz_headers)
     |> Map.merge(storage_class_headers)
-    |> Map.merge(acl_headers)
+    # |> Map.merge(acl_headers)
     |> Map.merge(encryption_headers)
     |> Map.merge(meta)
   end
