@@ -32,7 +32,7 @@ defmodule ExAws.S3.Utils do
 
     storage_class_headers = format_storage_class_headers(opts)
 
-    acl_headers = format_acl_headers(opts)
+    # acl_headers = format_acl_headers(opts)
 
     encryption_headers =
       opts
@@ -91,19 +91,19 @@ defmodule ExAws.S3.Utils do
 
   def format_storage_class_headers(_), do: %{}
 
-  @acl_headers [
-    :acl,
-    :grant_read,
-    :grant_write,
-    :grant_read_acp,
-    :grant_write_acp,
-    :grant_full_control
-  ]
-  def format_acl_headers(%{acl: canned_acl}) do
-    %{"x-amz-acl" => normalize_param(canned_acl)}
-  end
+  # @acl_headers [
+  #   :acl,
+  #   :grant_read,
+  #   :grant_write,
+  #   :grant_read_acp,
+  #   :grant_write_acp,
+  #   :grant_full_control
+  # ]
+  # def format_acl_headers(%{acl: canned_acl}) do
+  #   %{"x-amz-acl" => normalize_param(canned_acl)}
+  # end
 
-  def format_acl_headers(grants), do: format_grant_headers(grants)
+  # def format_acl_headers(grants), do: format_grant_headers(grants)
 
   def format_grant_headers(grants) do
     grants
